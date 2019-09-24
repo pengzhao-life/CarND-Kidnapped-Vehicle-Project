@@ -191,7 +191,7 @@ void ParticleFilter::resample() {
     }
 
     // assign the resampled_particles to the previous particles
-    particles = resampled_particles;
+    particles = std::move(resampled_particles);
 
     // clear weight 
     weights.clear();
